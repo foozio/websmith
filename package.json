@@ -1,0 +1,55 @@
+{
+  "name": "websmith-kit",
+  "private": true,
+  "description": "A comprehensive design system and component library for modern web applications",
+  "version": "0.1.0",
+  "author": "Nuzli Hernawan <nuzlilatief@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foozio/websmith-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/foozio/websmith-kit/issues"
+  },
+  "homepage": "https://websmith-kit.vercel.app",
+  "keywords": [
+    "react",
+    "components",
+    "design-system",
+    "ui-library",
+    "typescript",
+    "tailwindcss"
+  ],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "prepare": "husky",
+    "test": "turbo test"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "turbo": "^1.10.0",
+    "eslint": "^9.39.1",
+    "@typescript-eslint/parser": "^8.46.3",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "prettier": "^3.6.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6"
+  }
+}
+}

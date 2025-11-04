@@ -1,0 +1,42 @@
+# Getting Started
+
+Welcome to Websmith Kit! This guide will help you get up and running with the component library and design system.
+
+## Installation
+
+Install the core packages:
+
+```bash
+npm install @websmith/ui @websmith/tokens @websmith/theme
+```
+
+Or with yarn:
+
+```bash
+yarn add @websmith/ui @websmith/tokens @websmith/theme
+```
+
+## Basic Usage
+
+Import and use components in your React application:
+
+```tsx
+import { Button, Card, Input } from '@websmith/ui'
+
+function MyApp() {
+  return (
+    <Card className="p-6">
+      <h2 className="text-2xl font-bold mb-4">Welcome</h2>
+      <Input placeholder="Enter your name" className="mb-4" />
+      <Button>Submit</Button>
+    </Card>
+  )
+}
+```
+
+## Next Steps
+
+- Explore the [Components](/components) documentation
+- Learn about [Design Tokens](/tokens)
+- Customize your [Themes](/themes)
+- Try the [Playground](/playground)

@@ -1,0 +1,62 @@
+# Design Tokens
+
+Design tokens are the fundamental building blocks of your design system. Websmith Kit provides a comprehensive token system that can be exported in multiple formats.
+
+## Color Tokens
+
+### Primary Colors
+
+```css
+--primary-50: hsl(210, 100%, 98%);
+--primary-100: hsl(210, 100%, 95%);
+--primary-500: hsl(210, 100%, 60%);
+--primary-900: hsl(210, 100%, 20%);
+```
+
+### Gray Colors
+
+```css
+--gray-50: hsl(210, 20%, 98%);
+--gray-100: hsl(210, 20%, 95%);
+--gray-500: hsl(210, 20%, 60%);
+--gray-900: hsl(210, 20%, 20%);
+```
+
+## Spacing Tokens
+
+```css
+--spacing-1: 4px;
+--spacing-2: 8px;
+--spacing-4: 16px;
+--spacing-8: 32px;
+--spacing-16: 64px;
+```
+
+## Typography Tokens
+
+```css
+--font-size-xs: 12px;
+--font-size-sm: 14px;
+--font-size-base: 16px;
+--font-size-lg: 18px;
+--font-weight-normal: 400;
+--font-weight-bold: 700;
+```
+
+## Export Formats
+
+Tokens can be exported as:
+
+- **CSS Custom Properties**: For direct use in stylesheets
+- **JSON**: For integration with design tools
+- **Style Dictionary**: For advanced token management
+- **Figma Tokens**: For design-to-development workflow
+
+## Usage
+
+```tsx
+import { colors, spacing } from '@websmith/tokens'
+
+console.log(colors.primary[500]) // "hsl(210, 100%, 60%)"
+console.log(spacing[4]) // "16px"
+```

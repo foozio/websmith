@@ -1,0 +1,87 @@
+# Components
+
+Websmith Kit provides a comprehensive set of UI components built with React, TypeScript, and Tailwind CSS.
+
+## Layout Components
+
+### Container
+
+Centers content and provides consistent max-width.
+
+```tsx
+import { Container } from '@websmith/ui'
+
+<Container>
+  <p>Your content here</p>
+</Container>
+```
+
+### Grid
+
+Responsive grid system.
+
+```tsx
+import { Grid } from '@websmith/ui'
+
+<Grid cols={3} gap={4}>
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</Grid>
+```
+
+## Form Components
+
+### Button
+
+Interactive button with multiple variants.
+
+```tsx
+import { Button } from '@websmith/ui'
+
+<Button variant="default">Default</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+```
+
+### Input
+
+Text input field.
+
+```tsx
+import { Input } from '@websmith/ui'
+
+<Input placeholder="Enter text" />
+```
+
+## Data Display
+
+### Badge
+
+Small status indicator.
+
+```tsx
+import { Badge } from '@websmith/ui'
+
+<Badge variant="default">New</Badge>
+<Badge variant="secondary">Updated</Badge>
+```
+
+## Feedback
+
+### Alert
+
+Informational messages.
+
+```tsx
+import { Alert, AlertTitle, AlertDescription } from '@websmith/ui'
+
+<Alert>
+  <AlertTitle>Success!</AlertTitle>
+  <AlertDescription>Your changes have been saved.</AlertDescription>
+</Alert>
+```
+
+## API Reference
+
+For detailed props and usage, see the individual component documentation.

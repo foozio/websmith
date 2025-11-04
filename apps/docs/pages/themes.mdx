@@ -1,0 +1,68 @@
+# Themes
+
+Websmith Kit includes a powerful theming system that allows you to customize the appearance of your components.
+
+## Theme Presets
+
+### Modern
+
+A clean, contemporary theme with blue primary colors.
+
+### Classic
+
+A traditional theme with warm, earthy tones.
+
+### Minimal
+
+A stripped-down theme with neutral colors and minimal shadows.
+
+### Brand
+
+A customizable theme for brand-specific color schemes.
+
+## Customizing Themes
+
+```tsx
+import { createThemeCSS, modernPreset } from '@websmith/theme'
+
+const customTheme = {
+  ...modernPreset.config,
+  colors: {
+    ...modernPreset.config.colors,
+    primary: {
+      500: 'hsl(120, 100%, 50%)', // Custom green
+    }
+  }
+}
+
+const css = createThemeCSS(customTheme)
+```
+
+## Applying Themes
+
+Add the generated CSS to your application:
+
+```css
+/* styles.css */
+:root {
+  --primary-500: hsl(120, 100%, 50%);
+  /* ... other variables */
+}
+```
+
+Or use with Tailwind:
+
+```js
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: customTheme.colors,
+    }
+  }
+}
+```
+
+## Theme Builder
+
+Use the interactive theme builder to create and preview custom themes in real-time.
