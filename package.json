@@ -53,5 +53,9 @@
     "lint-staged": "^16.2.6",
     "prettier": "^3.6.2",
     "turbo": "^1.10.0"
+  },
+  "dependencies": {
+    "mermaid": "^11.12.1",
+    "tsup": "^8.5.0"
   }
 }

@@ -6,5 +6,6 @@ const withNextra = nextra({
 })
 
 export default withNextra({
+  output: 'standalone',
   // ... other Next.js config
 })

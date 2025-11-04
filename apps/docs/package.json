@@ -9,14 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@theguild/remark-mermaid": "^0.3.0",
+    "@websmith/theme": "file:../../packages/websmith-theme",
+    "@websmith/tokens": "file:../../packages/websmith-tokens",
+    "@websmith/ui": "file:../../packages/websmith-ui",
+    "mermaid": "^11.12.1",
     "next": "^14.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
     "nextra": "^2.13.0",
     "nextra-theme-docs": "^2.13.0",
-    "@websmith/ui": "file:../../packages/websmith-ui",
-    "@websmith/tokens": "file:../../packages/websmith-tokens",
-    "@websmith/theme": "file:../../packages/websmith-theme"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
