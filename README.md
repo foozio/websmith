@@ -99,6 +99,10 @@ websmith-kit/
 
 ### Documentation Site
 
+The documentation site can be deployed on Vercel or run locally using Docker.
+
+#### Vercel Deployment (Recommended for Production)
+
 The documentation site is deployed on Vercel and automatically updates on pushes to the `master` branch.
 
 To deploy manually:
@@ -106,6 +110,27 @@ To deploy manually:
 1. Install Vercel CLI: `npm i -g vercel`
 2. Login: `vercel login`
 3. Deploy: `vercel --prod` (from the `apps/docs` directory)
+
+#### Docker Deployment
+
+Run the documentation site using Docker:
+
+```bash
+# Using Docker Compose (recommended)
+docker-compose up -d
+
+# Or using Docker directly
+docker build -f Dockerfile.minimal -t websmith-kit .
+docker run -d -p 3000:3000 websmith-kit
+
+# Access at http://localhost:3000
+```
+
+The Docker image is optimized and production-ready with:
+- Multi-stage build for minimal size
+- Standalone Next.js output for fast startup
+- Alpine Linux base for security
+- Health checks configured
 
 ### NPM Packages
 

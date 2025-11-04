@@ -1,0 +1,20 @@
+# Production Dockerfile for Websmith Kit Documentation
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY apps/docs/package.json ./
+
+# Install only production dependencies
+RUN npm install --omit=dev --ignore-scripts
+
+# Copy the pre-built application
+COPY apps/docs/.next ./.next
+COPY apps/docs/public ./public
+
+# Expose port
+EXPOSE 3000
+
+# Start the application
+CMD ["npx", "next", "start"]

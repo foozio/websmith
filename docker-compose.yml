@@ -1,10 +1,8 @@
-version: '3.8'
-
 services:
   websmith-docs:
     build:
       context: .
-      dockerfile: apps/docs/Dockerfile
+      dockerfile: Dockerfile.minimal
     ports:
       - "3000:3000"
     environment:
