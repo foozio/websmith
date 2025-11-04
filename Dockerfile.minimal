@@ -5,6 +5,10 @@ WORKDIR /app
 
 # Copy the standalone build output
 COPY apps/docs/.next/standalone ./
+# Copy static files to the correct location for standalone mode
+COPY apps/docs/.next/static ./apps/docs/.next/static
+# Copy public files
+COPY apps/docs/public ./apps/docs/public
 
 EXPOSE 3000
 
