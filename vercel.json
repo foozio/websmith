@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npx turbo build --filter=docs",
+  "outputDirectory": "apps/docs/.next",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "devCommand": "npx turbo dev --filter=docs"
+}

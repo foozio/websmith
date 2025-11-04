@@ -30,7 +30,10 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
-    "prepare": "husky"
+    "test": "npm run typecheck",
+    "prepare": "husky",
+    "release": "changeset publish",
+    "version": "changeset version"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -42,12 +45,13 @@
     ]
   },
   "devDependencies": {
-    "turbo": "^1.10.0",
-    "eslint": "^9.39.1",
-    "@typescript-eslint/parser": "^8.46.3",
+    "@changesets/cli": "^2.29.7",
     "@typescript-eslint/eslint-plugin": "^8.46.3",
-    "prettier": "^3.6.2",
+    "@typescript-eslint/parser": "^8.46.3",
+    "eslint": "^9.39.1",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.6"
+    "lint-staged": "^16.2.6",
+    "prettier": "^3.6.2",
+    "turbo": "^1.10.0"
   }
 }

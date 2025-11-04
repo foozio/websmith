@@ -95,6 +95,51 @@ websmith-kit/
 └── docs/                     # Project documentation
 ```
 
+## Deployment
+
+### Documentation Site
+
+The documentation site is deployed on Vercel and automatically updates on pushes to the `master` branch.
+
+To deploy manually:
+
+1. Install Vercel CLI: `npm i -g vercel`
+2. Login: `vercel login`
+3. Deploy: `vercel --prod` (from the `apps/docs` directory)
+
+### NPM Packages
+
+Packages are published to NPM registry via GitHub Actions on releases.
+
+#### Setup NPM Publishing
+
+1. Create an NPM account and generate an access token
+2. Add `NPM_TOKEN` to GitHub repository secrets
+3. The release workflow will automatically publish on pushes to `master`
+
+#### Manual Publishing
+
+```bash
+# Build all packages
+npm run build
+
+# Create a changeset for the release
+npx changeset
+
+# Version packages
+npm run version
+
+# Publish packages (requires NPM_TOKEN)
+npm run release
+```
+
+#### Package Names
+
+- `@websmith/ui` - Component library
+- `@websmith/tokens` - Design tokens
+- `@websmith/theme` - Theme utilities
+- `@websmith/cli` - CLI tool
+
 ## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
