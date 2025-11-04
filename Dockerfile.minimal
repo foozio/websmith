@@ -1,18 +1,9 @@
 # Minimal production Dockerfile for Websmith Kit Documentation
-FROM node:18-alpine
+FROM nginx:alpine
 
-WORKDIR /app
+# Copy the static export output
+COPY apps/docs/out /usr/share/nginx/html
 
-# Copy the standalone build output
-COPY apps/docs/.next/standalone ./
-# Copy static files to the correct location for standalone mode
-COPY apps/docs/.next/static ./apps/docs/.next/static
-# Copy public files
-COPY apps/docs/public ./apps/docs/public
+EXPOSE 80
 
-EXPOSE 3000
-
-ENV PORT 3000
-ENV HOSTNAME "0.0.0.0"
-
-CMD ["node", "apps/docs/server.js"]
+CMD ["nginx", "-g", "daemon off;"]
