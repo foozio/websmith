@@ -35,7 +35,7 @@ function App() {
 
 ## Documentation
 
-Visit our [documentation site](https://websmith-kit.vercel.app) for complete guides, API references, and examples.
+Visit our [documentation site](https://websmith.vercel.app) for complete guides, API references, and examples.
 
 ## Development
 
@@ -48,8 +48,8 @@ Visit our [documentation site](https://websmith-kit.vercel.app) for complete gui
 
 ```bash
 # Clone the repository
-git clone https://github.com/foozio/websmith-kit.git
-cd websmith-kit
+git clone https://github.com/foozio/websmith.git
+cd websmith
 
 # Install dependencies
 npm install
@@ -82,7 +82,7 @@ npm run lint
 ## Project Structure
 
 ```
-websmith-kit/
+websmith/
 ├── apps/
 │   ├── docs/                 # Documentation site (Nextra)
 │   └── playground/           # Interactive component playground
@@ -120,8 +120,8 @@ Run the documentation site using Docker:
 docker-compose up -d
 
 # Or using Docker directly
-docker build -f Dockerfile.minimal -t websmith-kit .
-docker run -d -p 3000:3000 websmith-kit
+docker build -f Dockerfile.minimal -t websmith .
+docker run -d -p 3000:3000 websmith
 
 # Access at http://localhost:3000
 ```
