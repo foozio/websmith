@@ -20,7 +20,10 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@websmith/ui": ["../../packages/websmith-ui/src"],
+      "@websmith/tokens": ["../../packages/websmith-tokens/src"],
+      "@websmith/theme": ["../../packages/websmith-theme/src"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
