@@ -27,29 +27,29 @@ This document lists all identified tasks for improving and maintaining the Websm
 
 ### Security Hardening
 
-- [ ] Add automated dependency vulnerability scanning to CI pipeline
-- [ ] Implement input sanitization in CLI commands
-- [ ] Add security headers to documentation site
-- [ ] Configure Content Security Policy (CSP)
-- [ ] Add secret scanning to repository
-- [ ] Implement proper error handling and validation
-- [ ] Regular security audits and dependency updates
+- [x] Add automated dependency vulnerability scanning to CI pipeline
+- [x] Implement input sanitization in CLI commands
+- [x] Add security headers to documentation site
+- [x] Configure Content Security Policy (CSP)
+- [x] Add secret scanning to repository
+- [x] Implement proper error handling and validation
+- [x] Regular security audits and dependency updates
 
 ## Medium Priority Tasks
 
 ### Algorithm Improvements
 
-- [ ] Replace hardcoded lightness values in color generator with mathematical calculations
-- [ ] Add support for OKLCH and LCH color spaces
-- [ ] Implement dynamic token generation based on contrast requirements
-- [ ] Add validation for theme configuration objects
-- [ ] Improve typography token generation with better scale calculations
+- [x] Replace hardcoded lightness values in color generator with mathematical calculations
+- [x] Add support for OKLCH and LCH color spaces
+- [x] Implement dynamic token generation based on contrast requirements
+- [x] Add validation for theme configuration objects
+- [x] Improve typography token generation with better scale calculations
 
 ### Developer Experience
 
-- [ ] Integrate Storybook for component development and testing
-- [ ] Add hot reloading for theme changes in playground
-- [ ] Implement more token export formats (SCSS, LESS, CSS custom properties)
+- [x] Integrate Storybook for component development and testing
+- [x] Add hot reloading for theme changes in playground
+- [x] Implement more token export formats (SCSS, LESS, CSS custom properties)
 - [ ] Add TypeScript declaration file generation
 - [ ] Create VS Code extension for Websmith Kit
 - [ ] Add ESLint rules specific to Websmith patterns

@@ -7,6 +7,7 @@ export { Heading } from "./Heading"
 export { Text } from "./Text"
 export { Code } from "./Code"
 export { Link } from "./Link"
+export { Label } from "./Label"
 export { Input } from "./Input"
 export { Textarea } from "./Textarea"
 export {

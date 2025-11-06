@@ -1,3 +1,51 @@
+/* Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Storybook-specific styles */
+.sbdocs {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.sbdocs-content {
+  max-width: none;
+}
+
+/* Custom theme variables for Storybook */
+:root {
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-secondary: #64748b;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+}
+
+/* Dark theme support */
+[data-theme="dark"] {
+  --color-primary: #60a5fa;
+  --color-primary-hover: #3b82f6;
+  --color-secondary: #94a3b8;
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+}
+
+/* Component preview spacing */
+.storybook-viewport {
+  padding: 2rem;
+}
+
+/* Accessibility improvements */
+.sbh-story {
+  margin-bottom: 2rem;
+}
+
+/* Better focus styles for Storybook controls */
+.sbx-control input:focus,
+.sbx-control select:focus,
+.sbx-control textarea:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

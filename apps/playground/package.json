@@ -12,6 +12,8 @@
     "next": "^14.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "next-themes": "^0.2.1",
+    "lucide-react": "^0.552.0",
     "@websmith/ui": "file:../../packages/websmith-ui",
     "@websmith/tokens": "file:../../packages/websmith-tokens",
     "@websmith/theme": "file:../../packages/websmith-theme"
