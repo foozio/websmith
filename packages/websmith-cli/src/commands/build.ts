@@ -1,6 +1,6 @@
 import { Command } from 'commander'
 import { execSync } from 'child_process'
-import { existsSync } from 'fs'
+import { existsSync, readFileSync } from 'fs'
 import { sanitizeInput, ValidationError } from '../utils/security'
 
 export const buildCommand = new Command('build')
@@ -27,7 +27,7 @@ export const buildCommand = new Command('build')
       console.log(`🔨 Building project in ${mode} mode...`)
 
       // Build based on available scripts
-      const packageJson = JSON.parse(require('fs').readFileSync('package.json', 'utf8'))
+      const packageJson = JSON.parse(readFileSync('package.json', 'utf8'))
       
       if (packageJson.scripts?.build) {
         // Use project's build script

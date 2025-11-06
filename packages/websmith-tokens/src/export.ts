@@ -1,3 +1,4 @@
+/* eslint-disable @websmith/eslint-plugin/no-hardcoded-colors */
 import { colors, spacing, typography, shadows, borders, themes } from './index'
 
 // Export formats

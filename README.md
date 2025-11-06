@@ -14,6 +14,8 @@ Websmith Kit is a comprehensive design system and component library for building
 - 📚 **Documentation**: Complete guides and API references
 - 🎮 **Interactive Playground**: Experiment with components and themes
 - 🛠️ **CLI Tool**: Scaffold projects and manage components
+- ⚡ **Developer Tools**: VS Code extension and ESLint rules for enhanced DX
+- 🔧 **TypeScript Support**: Auto-generated declarations for better IDE support
 
 ## Quick Start
 
@@ -90,10 +92,42 @@ websmith/
 │   ├── websmith-ui/          # Core component library
 │   ├── websmith-tokens/      # Design token system
 │   ├── websmith-theme/       # Theme builder utilities
-│   └── websmith-cli/         # CLI tool
+│   ├── websmith-cli/         # CLI tool
+│   ├── websmith-eslint/      # ESLint rules for Websmith patterns
+│   └── websmith-vscode/      # VS Code extension for enhanced DX
 ├── tools/                    # Shared utilities
 └── docs/                     # Project documentation
 ```
+
+## Developer Tools
+
+### VS Code Extension
+
+Install the [Websmith Kit VS Code extension](https://marketplace.visualstudio.com/items?itemName=websmith.websmith-kit) for enhanced development experience:
+
+- **Component Explorer**: Browse and insert Websmith components
+- **Token Management**: Export and insert design tokens
+- **Theme Tools**: Create, validate, and preview themes
+- **IntelliSense**: Smart completion for components and tokens
+- **Code Snippets**: Pre-built templates for common patterns
+
+### ESLint Rules
+
+Add `@websmith/eslint-plugin` to your project for automatic code quality checks:
+
+```json
+{
+  "plugins": ["@websmith/eslint-plugin"],
+  "rules": {
+    "@websmith/eslint-plugin/no-hardcoded-colors": "warn",
+    "@websmith/eslint-plugin/enforce-cva-variants": "off"
+  }
+}
+```
+
+### TypeScript Declarations
+
+Websmith UI automatically generates comprehensive TypeScript declarations for better IDE support and type safety.
 
 ## Deployment
 
@@ -164,6 +198,8 @@ npm run release
 - `@websmith/tokens` - Design tokens
 - `@websmith/theme` - Theme utilities
 - `@websmith/cli` - CLI tool
+- `@websmith/eslint-plugin` - ESLint rules for Websmith patterns
+- `websmith-vscode` - VS Code extension for enhanced developer experience
 
 ## Contributing
 

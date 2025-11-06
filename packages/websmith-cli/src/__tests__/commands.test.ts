@@ -114,7 +114,7 @@ describe('add command', () => {
 
   test('copies requested components into the project', async () => {
     const { addCommand } = await import('../commands/add');
-    const logSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+    vi.spyOn(console, 'log').mockImplementation(() => {});
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
     try {

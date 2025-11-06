@@ -2,7 +2,7 @@ import { Command } from 'commander'
 import { existsSync, mkdirSync, writeFileSync } from 'fs'
 import { join } from 'path'
 import { validateProjectName, sanitizeInput, ValidationError } from '../utils/security'
-import { ErrorHandler, FileSystemError, ConfigurationError } from '../utils/error-handler'
+import { ErrorHandler, FileSystemError } from '../utils/error-handler'
 
 export const initCommand = new Command('init')
   .description('Initialize a new Websmith Kit project')

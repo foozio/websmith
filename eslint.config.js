@@ -34,6 +34,7 @@ export default [
         HTMLTableRowElement: 'readonly',
         HTMLTableCellElement: 'readonly',
         HTMLTableCaptionElement: 'readonly',
+        HTMLImageElement: 'readonly',
         // React globals
         React: 'readonly',
         JSX: 'readonly',
@@ -51,5 +52,45 @@ export default [
       '@websmith/eslint-plugin/enforce-cva-variants': 'off',
     },
     ignores: ['dist/**', 'node_modules/**', '.next/**'],
+  },
+  // Disable hardcoded-colors rule for test files and token generators
+  {
+    files: ['**/*.test.{ts,tsx}', '**/tokens/**/*.{ts,tsx}', '**/export.ts'],
+    rules: {
+      '@websmith/eslint-plugin/no-hardcoded-colors': 'off',
+    },
+  },
+  // UI package - allow variant constants (used in typeof)
+  {
+    files: ['packages/websmith-ui/**/*.{ts,tsx}'],
+    rules: {
+      '@typescript-eslint/no-unused-vars': ['error', {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_|Variants$',
+      }],
+    },
+  },
+  // Node.js environment for CLI package
+  {
+    files: ['packages/websmith-cli/**/*.{ts,tsx}'],
+    languageOptions: {
+      globals: {
+        process: 'readonly',
+        Buffer: 'readonly',
+        URL: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+        console: 'readonly',
+      },
+    },
+    rules: {
+      '@typescript-eslint/no-unused-vars': ['error', {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        caughtErrors: 'none',
+      }],
+      '@typescript-eslint/no-explicit-any': 'off',
+      'no-useless-escape': 'off',
+    },
   },
 ];

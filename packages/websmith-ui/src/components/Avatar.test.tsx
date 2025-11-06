@@ -92,7 +92,6 @@ describe('Avatar Components', () => {
     );
 
     const image = screen.getByTestId('image');
-    const fallback = screen.getByTestId('fallback');
     
     // Simulate error
     fireEvent.error(image);

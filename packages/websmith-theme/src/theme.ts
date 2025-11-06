@@ -6,9 +6,17 @@ export interface ThemeConfig {
     [key: string]: Record<string, string>
   }
   spacing: Record<string, string>
-  typography: any // Simplified for now
+  typography: {
+    fontFamily: Record<string, string[]>
+    fontSize: Record<string, string>
+    fontWeight: Record<string, string>
+    letterSpacing: Record<string, string>
+  }
   shadows: Record<string, string>
-  borders: any // Simplified for now
+  borders: {
+    radius: Record<string, string>
+    width: Record<string, string>
+  }
 }
 
 export interface ThemePreset {
@@ -16,23 +24,23 @@ export interface ThemePreset {
   config: ThemeConfig
 }
 
-export function createThemeCSS(theme: any): string {
+export function createThemeCSS(theme: ThemeConfig): string {
   let css = ':root {\n'
 
   // Colors
-  Object.entries(theme.colors).forEach(([colorName, shades]: [string, any]) => {
-    Object.entries(shades).forEach(([shade, value]: [string, any]) => {
+  Object.entries(theme.colors).forEach(([colorName, shades]: [string, Record<string, string>]) => {
+    Object.entries(shades).forEach(([shade, value]: [string, string]) => {
       css += `  --${colorName}-${shade}: ${value};\n`
     })
   })
 
   // Spacing
-  Object.entries(theme.spacing).forEach(([key, value]: [string, any]) => {
+  Object.entries(theme.spacing).forEach(([key, value]: [string, string]) => {
     css += `  --spacing-${key}: ${value};\n`
   })
 
   // Shadows
-  Object.entries(theme.shadows).forEach(([key, value]: [string, any]) => {
+  Object.entries(theme.shadows).forEach(([key, value]: [string, string]) => {
     css += `  --shadow-${key}: ${value};\n`
   })
 
@@ -40,7 +48,19 @@ export function createThemeCSS(theme: any): string {
   return css
 }
 
-export function createTailwindConfig(theme: ThemeConfig): any {
+export function createTailwindConfig(theme: ThemeConfig): {
+  theme: {
+    extend: {
+      colors: ThemeConfig['colors']
+      spacing: ThemeConfig['spacing']
+      fontFamily: ThemeConfig['typography']['fontFamily']
+      fontSize: ThemeConfig['typography']['fontSize']
+      fontWeight: ThemeConfig['typography']['fontWeight']
+      boxShadow: Record<string, string>
+      borderRadius: Record<string, string>
+    }
+  }
+} {
   return {
     theme: {
       extend: {

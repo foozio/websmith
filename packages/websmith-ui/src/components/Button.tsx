@@ -26,7 +26,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       icon: "h-10 w-10",
     }
 
-    const Comp: any = asChild ? Slot : "button"
+    const Comp: React.ElementType = asChild ? Slot : "button"
 
     return (
       <Comp

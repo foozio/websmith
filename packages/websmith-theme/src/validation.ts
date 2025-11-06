@@ -92,7 +92,6 @@ export function validateColors(colors: unknown, path: string[] = ['colors']): vo
   }
 
   const requiredColors = ['primary', 'gray']
-  const presentColors = Object.keys(colors as Record<string, unknown>)
   
   // Check required colors
   for (const requiredColor of requiredColors) {

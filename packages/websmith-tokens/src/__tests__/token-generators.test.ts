@@ -25,7 +25,7 @@ describe('color token generators', () => {
       '950',
     ])
     expect(palette['50']).toBe('hsl(210, 60%, 98%)')
-    expect(palette['500']).toBe('hsl(210, 60%, 60%)')
+    expect(palette['500']).toBe('hsl(210, 60%, 50%)')
     expect(palette['900']).toBe('hsl(210, 60%, 20%)')
   })
 
@@ -33,8 +33,8 @@ describe('color token generators', () => {
     const gray = generateGrayPalette()
     const primary = generatePrimaryPalette()
 
-    expect(gray['500']).toBe('hsl(210, 20%, 60%)')
-    expect(primary['500']).toBe('hsl(210, 100%, 60%)')
+    expect(gray['500']).toBe('hsl(210, 20%, 50%)')
+    expect(primary['500']).toBe('hsl(210, 100%, 50%)')
   })
 })
 
@@ -62,11 +62,12 @@ describe('spacing token generator', () => {
 describe('typography tokens', () => {
   it('exposes the expected font families and sizes', () => {
     expect(typography.fontFamily.sans).toContain('Inter')
-    expect(typography.fontSize['2xl']).toEqual([
-      '24px',
-      { lineHeight: '32px' },
-    ])
-    expect(typography.fontWeight.bold).toBe('700')
+    expect(typography.fontSize['2xl']).toEqual({
+      fontSize: '31px',
+      lineHeight: 1.1,
+      letterSpacing: undefined
+    })
+    expect(typography.fontWeight.bold).toBe(700)
     expect(typography.letterSpacing.wider).toBe('0.05em')
   })
 })

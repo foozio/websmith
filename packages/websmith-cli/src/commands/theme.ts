@@ -1,5 +1,5 @@
 import { Command } from 'commander'
-import { existsSync, writeFileSync, mkdirSync } from 'fs'
+import { writeFileSync, mkdirSync } from 'fs'
 import { join, resolve } from 'path'
 import { validateThemePreset, sanitizeInput, ValidationError } from '../utils/security'
 import { modernPreset, classicPreset, minimalPreset, brandPreset } from '@websmith/theme'

@@ -50,9 +50,9 @@ This document lists all identified tasks for improving and maintaining the Websm
 - [x] Integrate Storybook for component development and testing
 - [x] Add hot reloading for theme changes in playground
 - [x] Implement more token export formats (SCSS, LESS, CSS custom properties)
-- [ ] Add TypeScript declaration file generation
-- [ ] Create VS Code extension for Websmith Kit
-- [ ] Add ESLint rules specific to Websmith patterns
+- [x] Add TypeScript declaration file generation
+- [x] Create VS Code extension for Websmith Kit
+- [x] Add ESLint rules specific to Websmith patterns
 
 ### Performance Optimization
 
