@@ -1,0 +1,45 @@
+name: Chromatic Visual Tests
+
+on:
+  pull_request:
+    paths:
+      - 'packages/websmith-ui/**'
+      - 'packages/websmith-theme/**'
+      - 'packages/websmith-tokens/**'
+      - 'packages/websmith-cli/**'
+      - '.github/workflows/chromatic.yml'
+      - 'package.json'
+      - 'turbo.json'
+  push:
+    branches:
+      - main
+      - development
+    paths:
+      - 'packages/websmith-ui/**'
+      - '.github/workflows/chromatic.yml'
+      - 'package.json'
+      - 'turbo.json'
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    env:
+      TURBO_CACHE_DIR: .turbo-cache
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Publish to Chromatic
+        run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --storybook-build-dir=packages/websmith-ui/storybook-static --exit-zero-on-changes

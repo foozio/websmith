@@ -33,6 +33,9 @@
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "test:ui": "vitest --ui",
+    "storybook": "npm run storybook --workspace=@websmith/ui",
+    "build-storybook": "npm run build-storybook --workspace=@websmith/ui",
+    "chromatic": "npm run build-storybook -- --quiet && chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --storybook-build-dir packages/websmith-ui/storybook-static",
     "prepare": "husky",
     "release": "changeset publish",
     "version": "changeset version"
@@ -54,6 +57,7 @@
     "@typescript-eslint/parser": "^8.46.3",
     "@vitest/coverage-v8": "^4.0.7",
     "@vitest/ui": "^4.0.7",
+    "chromatic": "^13.3.3",
     "eslint": "^9.39.1",
     "husky": "^9.1.7",
     "jsdom": "^27.1.0",

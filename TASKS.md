@@ -22,7 +22,7 @@ This document lists all identified tasks for improving and maintaining the Websm
 - [x] Add integration tests for theme generation and CSS output
 - [x] Add CLI command tests
 - [x] Configure test coverage reporting
-- [ ] Add visual regression tests for components
+- [x] Add visual regression tests for components *(Storybook + Chromatic pipeline configured)*
 - [x] Target 80%+ code coverage
 
 ### Security Hardening
