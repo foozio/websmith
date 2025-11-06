@@ -6,17 +6,17 @@ This document lists all identified tasks for improving and maintaining the Websm
 
 ### CLI Implementation
 
-- [ ] Implement `websmith init` command for project scaffolding
-- [ ] Implement `websmith add` command for component installation
-- [ ] Implement `websmith theme` command for theme generation
-- [ ] Implement `websmith tokens` command for token export
-- [ ] Implement `websmith build` command for project building
-- [ ] Add input validation and error handling to all CLI commands
-- [ ] Update CLI version from hardcoded '0.0.0' to dynamic versioning
+- [x] Implement `websmith init` command for project scaffolding
+- [x] Implement `websmith add` command for component installation
+- [x] Implement `websmith theme` command for theme generation
+- [x] Implement `websmith tokens` command for token export
+- [x] Implement `websmith build` command for project building
+- [x] Add input validation and error handling to all CLI commands
+- [x] Update CLI version from hardcoded '0.0.0' to dynamic versioning
 
 ### Testing Infrastructure
 
-- [ ] Set up Jest/Vitest testing framework
+- [x] Set up Jest/Vitest testing framework
 - [ ] Add unit tests for token generators (colors, spacing, typography)
 - [ ] Add component tests for UI library using Testing Library
 - [ ] Add integration tests for theme generation and CSS output
@@ -85,12 +85,18 @@ This document lists all identified tasks for improving and maintaining the Websm
 
 ### Documentation and Community
 
+- [x] Create hierarchical AGENTS guides for repository and sub-workspaces *(Completed 2025-11-06)*
 - [ ] Add video tutorials and interactive examples
 - [ ] Create migration guides for major version updates
 - [ ] Develop contribution guidelines and templates
 - [ ] Add performance benchmarks and comparisons
 - [ ] Create case studies and success stories
 - [ ] Establish community governance model
+- [ ] Docs maintainers review and sign off on `apps/docs/AGENTS.md` *(Owner: Nuzli Hernawan — foozio; notified via TASKS.md on 2025-11-06)*
+- [ ] Playground maintainers review and sign off on `apps/playground/AGENTS.md` *(Owner: Nuzli Hernawan — foozio; notified via TASKS.md on 2025-11-06)*
+- [ ] Packages maintainers review and sign off on `packages/AGENTS.md` plus package guides *(Owner: Nuzli Hernawan — foozio; notified via TASKS.md on 2025-11-06)*
+- [ ] UI component leads validate `packages/websmith-ui/AGENTS.md` coverage *(Owner: Nuzli Hernawan — foozio; notified via TASKS.md on 2025-11-06)*
+- [ ] CLI/tooling leads validate `packages/websmith-cli/AGENTS.md` instructions *(Owner: Nuzli Hernawan — foozio; notified via TASKS.md on 2025-11-06)*
 
 ## Maintenance Tasks
 
