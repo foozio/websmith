@@ -17,13 +17,13 @@ This document lists all identified tasks for improving and maintaining the Websm
 ### Testing Infrastructure
 
 - [x] Set up Jest/Vitest testing framework
-- [ ] Add unit tests for token generators (colors, spacing, typography)
-- [ ] Add component tests for UI library using Testing Library
-- [ ] Add integration tests for theme generation and CSS output
-- [ ] Add CLI command tests
-- [ ] Configure test coverage reporting
+- [x] Add unit tests for token generators (colors, spacing, typography)
+- [x] Add component tests for UI library using Testing Library
+- [x] Add integration tests for theme generation and CSS output
+- [x] Add CLI command tests
+- [x] Configure test coverage reporting
 - [ ] Add visual regression tests for components
-- [ ] Target 80%+ code coverage
+- [x] Target 80%+ code coverage
 
 ### Security Hardening
 

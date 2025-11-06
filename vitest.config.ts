@@ -9,4 +9,10 @@ export default defineConfig({
   esbuild: {
     jsxInject: `import React from 'react'`,
   },
+  coverage: {
+    provider: 'v8',
+    reporter: ['text', 'lcov'],
+    reportsDirectory: './coverage',
+    include: ['packages/**/src/**/*.{ts,tsx}'],
+  },
 });
