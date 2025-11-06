@@ -1,6 +1,7 @@
 import js from '@eslint/js';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsparser from '@typescript-eslint/parser';
+import wsplugin from './packages/websmith-eslint/dist/index.js';
 
 export default [
   js.configs.recommended,
@@ -40,11 +41,14 @@ export default [
     },
     plugins: {
       '@typescript-eslint': tseslint,
+      '@websmith/eslint-plugin': wsplugin,
     },
     rules: {
       ...tseslint.configs.recommended.rules,
       '@typescript-eslint/no-empty-object-type': 'off',
-      // Add custom rules here
+      // Websmith rules
+      '@websmith/eslint-plugin/no-hardcoded-colors': 'warn',
+      '@websmith/eslint-plugin/enforce-cva-variants': 'off',
     },
     ignores: ['dist/**', 'node_modules/**', '.next/**'],
   },

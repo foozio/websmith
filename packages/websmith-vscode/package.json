@@ -1,0 +1,264 @@
+{
+  "name": "websmith-kit",
+  "displayName": "Websmith Kit",
+  "description": "Complete development toolkit for Websmith design system - components, tokens, themes, and more",
+  "version": "1.0.0",
+  "publisher": "websmith",
+  "author": "Nuzli Hernawan <nuzlilatief@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://websmith-kit.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foozio/websmith.git"
+  },
+  "bugs": {
+    "url": "https://github.com/foozio/websmith/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Formatters",
+    "Linters",
+    "Themes",
+    "Other"
+  ],
+  "keywords": [
+    "websmith",
+    "design system",
+    "components",
+    "tokens",
+    "theme",
+    "ui",
+    "react",
+    "typescript",
+    "tailwind"
+  ],
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:css",
+    "onLanguage:scss",
+    "onLanguage:less"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "websmith.createComponent",
+        "title": "Create Component",
+        "category": "Websmith Kit"
+      },
+      {
+        "command": "websmith.createTheme",
+        "title": "Create Theme",
+        "category": "Websmith Kit"
+      },
+      {
+        "command": "websmith.exportTokens",
+        "title": "Export Design Tokens",
+        "category": "Websmith Kit"
+      },
+      {
+        "command": "websmith.validateTheme",
+        "title": "Validate Theme Configuration",
+        "category": "Websmith Kit"
+      },
+      {
+        "command": "websmith.generateDeclarations",
+        "title": "Generate TypeScript Declarations",
+        "category": "Websmith Kit"
+      },
+      {
+        "command": "websmith.openPlayground",
+        "title": "Open in Playground",
+        "category": "Websmith Kit"
+      },
+      {
+        "command": "websmith.openStorybook",
+        "title": "Open Storybook",
+        "category": "Websmith Kit"
+      },
+      {
+        "command": "websmith.insertComponent",
+        "title": "Insert Component",
+        "category": "Websmith Kit"
+      },
+      {
+        "command": "websmith.insertToken",
+        "title": "Insert Design Token",
+        "category": "Websmith Kit"
+      },
+      {
+        "command": "websmith.previewTheme",
+        "title": "Preview Theme",
+        "category": "Websmith Kit"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/components.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/tokens.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/components.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/tokens.json"
+      },
+      {
+        "language": "css",
+        "path": "./snippets/tokens.json"
+      },
+      {
+        "language": "scss",
+        "path": "./snippets/tokens.json"
+      },
+      {
+        "language": "less",
+        "path": "./snippets/tokens.json"
+      }
+    ],
+    "configuration": {
+      "title": "Websmith Kit",
+      "properties": {
+        "websmith.autoImport": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically import Websmith components when using snippets"
+        },
+        "websmith.themePath": {
+          "type": "string",
+          "default": "./src/theme.ts",
+          "description": "Path to theme configuration file"
+        },
+        "websmith.tokensPath": {
+          "type": "string",
+          "default": "./src/tokens.ts",
+          "description": "Path to design tokens file"
+        },
+        "websmith.componentsPath": {
+          "type": "string",
+          "default": "./src/components",
+          "description": "Path to components directory"
+        },
+        "websmith.enableIntellisense": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable enhanced IntelliSense for Websmith components and tokens"
+        },
+        "websmith.showPreview": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show component preview in hover"
+        },
+        "websmith.exportFormat": {
+          "type": "string",
+          "enum": ["css", "scss", "less", "js", "ts", "json"],
+          "default": "css",
+          "description": "Default format for design token exports"
+        }
+      }
+    },
+    "menus": {
+      "editor/context": [
+        {
+          "command": "websmith.insertComponent",
+          "group": "websmith",
+          "when": "editorLangId == typescriptreact || editorLangId == javascriptreact"
+        },
+        {
+          "command": "websmith.insertToken",
+          "group": "websmith",
+          "when": "editorLangId == typescript || editorLangId == javascript || editorLangId == css || editorLangId == scss || editorLangId == less"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "websmith.createComponent",
+          "group": "websmith",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "websmith.createTheme",
+          "group": "websmith",
+          "when": "explorerResourceIsFolder"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "websmith.createComponent",
+          "when": "editorLangId == typescriptreact || editorLangId == javascriptreact"
+        },
+        {
+          "command": "websmith.createTheme",
+          "when": "editorLangId == typescript || editorLangId == javascript"
+        },
+        {
+          "command": "websmith.insertComponent",
+          "when": "editorLangId == typescriptreact || editorLangId == javascriptreact"
+        },
+        {
+          "command": "websmith.insertToken",
+          "when": "editorLangId == typescript || editorLangId == javascript || editorLangId == css || editorLangId == scss || editorLangId == less"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "websmithExplorer",
+          "name": "Websmith Kit",
+          "icon": "$(symbol-color)",
+          "when": "workspaceContains:package.json"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "websmith",
+          "title": "Websmith Kit",
+          "icon": "$(symbol-color)"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "websmithExplorer",
+        "contents": "Welcome to Websmith Kit!\n\n[Create Component](command:websmith.createComponent)\n[Create Theme](command:websmith.createTheme)\n[Export Tokens](command:websmith.exportTokens)\n\nLearn more about [Websmith Kit](https://websmith-kit.vercel.app)."
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@websmith/tokens": "file:../websmith-tokens",
+    "@websmith/ui": "file:../websmith-ui", 
+    "@websmith/theme": "file:../websmith-theme"
+  }
+}

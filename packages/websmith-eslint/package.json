@@ -1,0 +1,26 @@
+{
+  "name": "@websmith/eslint-plugin",
+  "version": "0.1.0",
+  "description": "ESLint rules for Websmith Kit patterns and best practices",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foozio/websmith"
+  },
+  "peerDependencies": {
+    "eslint": ">=8"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.0",
+    "tsup": "^8.5.0"
+  }
+}

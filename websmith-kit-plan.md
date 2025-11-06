@@ -11,7 +11,7 @@
 
 ### Monorepo Structure (Turbo)
 ```
-websmith-kit/
+websmith/
 ├── apps/
 │   ├── docs/                 # Documentation site
 │   └── playground/           # Interactive component playground

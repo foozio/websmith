@@ -26,7 +26,8 @@
   ],
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup",
+    "build": "npm run build:declarations && tsup",
+    "build:declarations": "tsx src/declarations/generator.ts",
     "dev": "tsup --watch",
     "lint": "eslint src --ext .ts,.tsx",
     "typecheck": "tsc --noEmit",
@@ -51,6 +52,8 @@
     "@types/react-dom": "^18.2.0",
     "eslint-plugin-storybook": "^10.0.5",
     "storybook": "^10.0.5",
+    "ts-morph": "^23.0.0",
+    "tsx": "^4.19.2",
     "tsup": "^8.5.0",
     "typescript": "^5.0.0"
   },

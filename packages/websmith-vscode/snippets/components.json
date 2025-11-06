@@ -1,0 +1,124 @@
+{
+  "Button Component": {
+    "prefix": "ws-button",
+    "body": [
+      "<Button variant=\"${1:default}\" size=\"${2:default}\">",
+      "  ${3:Button Text}",
+      "</Button>"
+    ],
+    "description": "Insert a Websmith Button component"
+  },
+  "Card Component": {
+    "prefix": "ws-card",
+    "body": [
+      "<Card>",
+      "  <CardHeader>",
+      "    <CardTitle>${1:Card Title}</CardTitle>",
+      "    <CardDescription>${2:Card Description}</CardDescription>",
+      "  </CardHeader>",
+      "  <CardContent>",
+      "    ${3:Card Content}",
+      "  </CardContent>",
+      "</Card>"
+    ],
+    "description": "Insert a Websmith Card component"
+  },
+  "Dialog Component": {
+    "prefix": "ws-dialog",
+    "body": [
+      "<Dialog>",
+      "  <DialogTrigger asChild>",
+      "    <Button variant=\"outline\">${1:Open Dialog}</Button>",
+      "  </DialogTrigger>",
+      "  <DialogContent>",
+      "    <DialogHeader>",
+      "      <DialogTitle>${2:Dialog Title}</DialogTitle>",
+      "      <DialogDescription>${3:Dialog Description}</DialogDescription>",
+      "    </DialogHeader>",
+      "  </DialogContent>",
+      "</Dialog>"
+    ],
+    "description": "Insert a Websmith Dialog component"
+  },
+  "Avatar Component": {
+    "prefix": "ws-avatar",
+    "body": [
+      "<Avatar>",
+      "  <AvatarImage src=\"${1:https://example.com/avatar.jpg}\" alt=\"${2:User Avatar}\" />",
+      "  <AvatarFallback>${3:U}</AvatarFallback>",
+      "</Avatar>"
+    ],
+    "description": "Insert a Websmith Avatar component"
+  },
+  "Badge Component": {
+    "prefix": "ws-badge",
+    "body": [
+      "<Badge variant=\"${1:default}\">${2:Badge Text}</Badge>"
+    ],
+    "description": "Insert a Websmith Badge component"
+  },
+  "Label Component": {
+    "prefix": "ws-label",
+    "body": [
+      "<Label htmlFor=\"${1:input-id}\">${2:Label Text}</Label>"
+    ],
+    "description": "Insert a Websmith Label component"
+  },
+  "Input Component": {
+    "prefix": "ws-input",
+    "body": [
+      "<Input type=\"${1:text}\" placeholder=\"${2:Enter text...}\" />"
+    ],
+    "description": "Insert a Websmith Input component"
+  },
+  "Select Component": {
+    "prefix": "ws-select",
+    "body": [
+      "<Select>",
+      "  <SelectTrigger>",
+      "    <SelectValue placeholder=\"${1:Select an option}\" />",
+      "  </SelectTrigger>",
+      "  <SelectContent>",
+      "    <SelectItem value=\"${2:option1}\">${3:Option 1}</SelectItem>",
+      "    <SelectItem value=\"${4:option2}\">${5:Option 2}</SelectItem>",
+      "  </SelectContent>",
+      "</Select>"
+    ],
+    "description": "Insert a Websmith Select component"
+  },
+  "Import Websmith Components": {
+    "prefix": "ws-import",
+    "body": [
+      "import { ${1:Button} } from '@websmith/ui'"
+    ],
+    "description": "Import Websmith components"
+  },
+  "Websmith Component Template": {
+    "prefix": "ws-component",
+    "body": [
+      "import * as React from \"react\"",
+      "import { cn } from \"../lib/utils\"",
+      "",
+      "export interface ${1:ComponentName}Props extends React.HTMLAttributes<HTMLDivElement> {",
+      "  // Add your component props here",
+      "}",
+      "",
+      "export const ${1:ComponentName} = React.forwardRef<HTMLDivElement, ${1:ComponentName}Props>(",
+      "  ({ className, children, ...props }, ref) => {",
+      "    return (",
+      "      <div",
+      "        ref={ref}",
+      "        className={cn(\"base-component-classes\", className)}",
+      "        {...props}",
+      "      >",
+      "        {children}",
+      "      </div>",
+      "    )",
+      "  }",
+      ")",
+      "",
+      "${1:ComponentName}.displayName = \"${1:ComponentName}\""
+    ],
+    "description": "Create a new Websmith component template"
+  }
+}
