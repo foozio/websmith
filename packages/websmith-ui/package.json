@@ -21,10 +21,44 @@
     "typescript"
   ],
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "files": [
     "dist"
   ],
   "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.mjs",
+      "require": "./dist/core.js"
+    },
+    "./forms": {
+      "types": "./dist/forms.d.ts",
+      "import": "./dist/forms.mjs",
+      "require": "./dist/forms.js"
+    },
+    "./layout": {
+      "types": "./dist/layout.d.ts",
+      "import": "./dist/layout.mjs",
+      "require": "./dist/layout.js"
+    },
+    "./overlay": {
+      "types": "./dist/overlay.d.ts",
+      "import": "./dist/overlay.mjs",
+      "require": "./dist/overlay.js"
+    },
+    "./data": {
+      "types": "./dist/data.d.ts",
+      "import": "./dist/data.mjs",
+      "require": "./dist/data.js"
+    }
+  },
   "scripts": {
     "build": "npm run build:declarations && tsup",
     "build:declarations": "tsx src/declarations/generator.ts",
