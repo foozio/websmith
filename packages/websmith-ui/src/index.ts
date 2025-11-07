@@ -31,3 +31,42 @@ export {
   usePerformanceMetrics,
   usePerformanceReport,
 } from "./hooks/usePerformance"
+
+// Internationalization (i18n) utilities
+export {
+  I18n,
+  initI18n,
+  getI18n,
+  t,
+  formatNumber,
+  formatDate,
+  formatRelativeTime,
+  plural,
+  type Locale,
+  type TranslationMessages,
+  type I18nConfig,
+} from "./i18n"
+
+export {
+  I18nProvider,
+  useI18n,
+  useTranslation,
+  useFormattedNumber,
+  useFormattedDate,
+  useFormattedRelativeTime,
+  withI18n,
+  LocaleMatch,
+  Trans,
+  type I18nProviderProps,
+  type LocaleMatchProps,
+  type TransProps,
+} from "./i18n/context"
+
+export {
+  en,
+  es,
+  fr,
+  defaultLocales,
+  getLocale,
+  getAvailableLocales,
+} from "./i18n/locales"
