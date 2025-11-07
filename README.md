@@ -81,6 +81,15 @@ npm run test
 npm run lint
 ```
 
+### Development Workflow
+
+See [DEVELOPMENT_WORKFLOW.md](./DEVELOPMENT_WORKFLOW.md) for detailed information about:
+- Branch strategy (master/development)
+- Commit conventions
+- Release process
+- Changeset management
+- Testing guidelines
+
 ## Project Structure
 
 ```
