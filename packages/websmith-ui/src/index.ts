@@ -112,3 +112,39 @@ export {
   type ThemeSelectProps,
   type ThemeButtonGroupProps,
 } from "./theme/ThemeToggle"
+
+// Theme composition and inheritance
+export {
+  ThemeComposer,
+  createTheme,
+  extendTheme,
+  mergeThemes,
+  createVariants,
+  applyOverrides,
+  createResponsiveTokens,
+  interpolateTokens,
+  createSemanticTheme,
+  validateTheme,
+  extractThemeSubset,
+  transformTheme,
+  createPreset,
+  applyPreset,
+  getThemeComposer,
+  initThemeComposer,
+  type ThemeTokens,
+  type ThemeVariant,
+  type ComposedTheme,
+  type ThemePreset,
+} from "./theme/composition"
+
+export {
+  useThemeComposer,
+  useMergedTheme,
+  useThemeVariants,
+  useConditionalTheme,
+  useTransformedTheme,
+  useThemePreset,
+  useThemeVariant,
+  useResponsiveTheme,
+  useThemeInheritance,
+} from "./theme/useComposition"
