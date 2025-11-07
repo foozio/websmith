@@ -67,7 +67,7 @@ This document lists all identified tasks for improving and maintaining the Websm
 
 ### Advanced Features
 
-- [ ] Develop Figma plugin for design token synchronization
+- [x] Develop Figma plugin for design token synchronization
 - [x] Add internationalization (i18n) support
 - [x] Implement advanced dark mode system
 - [x] Add theme inheritance and composition features
