@@ -10,22 +10,33 @@ graph TD
     A --> C[websmith-tokens]
     A --> D[websmith-theme]
     A --> E[websmith-cli]
-    A --> F[apps/docs]
-    A --> G[apps/playground]
+    A --> F[websmith-governance]
+    A --> G[websmith-figma]
+    A --> H[websmith-a11y]
+    A --> I[websmith-eslint]
+    A --> J[websmith-vscode]
+    A --> K[apps/docs]
+    A --> L[apps/playground]
 
-    B --> H[Radix UI]
-    B --> I[Tailwind CSS]
-    B --> J[class-variance-authority]
+    B --> M[Radix UI]
+    B --> N[Tailwind CSS]
+    B --> O[class-variance-authority]
+    B --> H
 
-    E --> K[commander]
+    E --> P[commander]
 
     F --> B
     F --> C
-    F --> D
 
-    G --> B
-    G --> C
-    G --> D
+    K --> B
+    K --> C
+    K --> D
+    K --> F
+    K --> H
+
+    L --> B
+    L --> C
+    L --> D
 ```
 
 ## Data Flow Architecture
@@ -34,11 +45,18 @@ graph TD
 flowchart LR
     A[Base Colors] --> B[Token Generators]
     B --> C[Design Tokens]
-    C --> D[Theme Config]
-    D --> E[CSS Variables]
-    D --> F[Tailwind Config]
-    E --> G[UI Components]
-    F --> G
+    C --> D[Cache Layer]
+    D --> E[Theme Config]
+    E --> F[Theme Composer]
+    F --> G[CSS Variables]
+    F --> H[Tailwind Config]
+    G --> I[UI Components]
+    H --> I
+    I --> J[Governance Tracking]
+    I --> K[A11y Validation]
+    
+    L[Figma Styles] --> M[Figma Plugin]
+    M --> C
 ```
 
 ## Component Hierarchy
@@ -188,6 +206,154 @@ flowchart LR
     E --> J[Docker Build]
     J --> K[Vercel Deploy]
     K --> L[Documentation Site]
+```
+
+## Theme Composition System
+
+```mermaid
+graph TD
+    A[Base Theme] --> B[ThemeComposer]
+    B --> C[Extended Theme]
+    B --> D[Merged Theme]
+    B --> E[Theme Variants]
+    
+    C --> F[Deep Merge]
+    D --> F
+    E --> F
+    
+    F --> G[Composed Theme]
+    G --> H[CSS Variables]
+    G --> I[React Context]
+    
+    J[Theme Presets] --> B
+    K[Responsive Tokens] --> B
+    L[Semantic Mapping] --> B
+```
+
+## Governance System Architecture
+
+```mermaid
+graph TD
+    A[UI Components] --> B[GovernanceManager]
+    C[Design Tokens] --> B
+    
+    B --> D[Usage Tracking]
+    B --> E[Deprecation Management]
+    B --> F[Validation Rules]
+    
+    D --> G[Component Metrics]
+    D --> H[Token Metrics]
+    
+    E --> I[Migration Paths]
+    
+    F --> J[Violations]
+    
+    G --> K[Coverage Report]
+    H --> K
+    I --> K
+    J --> K
+    
+    K --> L[CI/CD Integration]
+    K --> M[Analytics Dashboard]
+```
+
+## Accessibility Validation Flow
+
+```mermaid
+flowchart LR
+    A[Component] --> B[A11yAuditor]
+    
+    B --> C[Color Contrast Check]
+    B --> D[ARIA Validation]
+    B --> E[Keyboard Nav Check]
+    B --> F[Focus Indicator Check]
+    B --> G[Text Alternative Check]
+    
+    C --> H[WCAG Compliance]
+    D --> H
+    E --> H
+    F --> H
+    G --> H
+    
+    H --> I[Violations Report]
+    I --> J[Error Level]
+    I --> K[Warning Level]
+    I --> L[Info Level]
+    
+    J --> M[CI/CD Gate]
+    K --> M
+```
+
+## Internationalization System
+
+```mermaid
+graph TD
+    A[Translation Files] --> B[I18n Manager]
+    B --> C[Locale Detection]
+    B --> D[Translation Loading]
+    
+    C --> E[Browser Locale]
+    C --> F[User Preference]
+    C --> G[Fallback Locale]
+    
+    D --> H[Translation Cache]
+    H --> I[React Context]
+    
+    I --> J[useTranslation Hook]
+    J --> K[UI Components]
+    
+    L[Pluralization Rules] --> B
+    M[Formatting Helpers] --> B
+```
+
+## Figma Integration Flow
+
+```mermaid
+flowchart LR
+    A[Figma File] --> B[Figma Plugin]
+    
+    B --> C[Extract Paint Styles]
+    B --> D[Extract Text Styles]
+    B --> E[Extract Effect Styles]
+    B --> F[Extract Spacing]
+    
+    C --> G[Color Tokens]
+    D --> H[Typography Tokens]
+    E --> I[Shadow Tokens]
+    F --> J[Spacing Tokens]
+    
+    G --> K[Token Formatter]
+    H --> K
+    I --> K
+    J --> K
+    
+    K --> L[Websmith JSON]
+    L --> M[Import to Project]
+    M --> N[Design Tokens]
+```
+
+## Performance Optimization Architecture
+
+```mermaid
+graph TD
+    A[Token Generation] --> B[Cache Check]
+    B -->|Hit| C[Return Cached]
+    B -->|Miss| D[Generate New]
+    
+    D --> E[Batch Processing]
+    E --> F[Deduplication]
+    F --> G[Minification]
+    
+    G --> H[Store in Cache]
+    H --> C
+    
+    I[CSS Generation] --> J[Optimization]
+    J --> K[80-85% Faster]
+    
+    L[Component Loading] --> M[Code Splitting]
+    M --> N[Lazy Loading]
+    N --> O[Tree Shaking]
+    O --> P[Minimal Bundle]
 ```</content>
 <parameter name="filePath">ERD.md
 ````
