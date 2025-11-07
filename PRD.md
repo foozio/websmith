@@ -176,12 +176,12 @@ To empower developers to build high-quality, accessible, and visually consistent
 
 ## Roadmap
 
-### Phase 1 (Current)
+### Phase 1 (Completed)
 
-- Core component library
-- Basic token system
-- Theme presets
-- Documentation site
+- ✅ Core component library (30+ components)
+- ✅ Basic token system (colors, spacing, typography, shadows, borders)
+- ✅ Theme presets (customizable themes)
+- ✅ Documentation site (Nextra-based with guides and API references)
 
 ### Phase 2 (Completed)
 
