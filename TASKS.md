@@ -69,7 +69,7 @@ This document lists all identified tasks for improving and maintaining the Websm
 
 - [ ] Develop Figma plugin for design token synchronization
 - [x] Add internationalization (i18n) support
-- [ ] Implement advanced dark mode system
+- [x] Implement advanced dark mode system
 - [ ] Add theme inheritance and composition features
 - [ ] Create design system governance tools
 - [ ] Add accessibility auditing tools

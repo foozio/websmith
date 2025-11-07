@@ -70,3 +70,45 @@ export {
   getLocale,
   getAvailableLocales,
 } from "./i18n/locales"
+
+// Theme and dark mode utilities
+export {
+  ThemeManager,
+  initThemeManager,
+  getThemeManager,
+  getSystemTheme,
+  prefersDarkMode,
+  prefersReducedMotion,
+  type ThemeMode,
+  type ResolvedTheme,
+  type ThemeConfig,
+  type ThemeState,
+} from "./theme"
+
+export {
+  ThemeProvider,
+  useTheme,
+  useThemeMode,
+  useResolvedTheme,
+  useIsDark,
+  useIsLight,
+  useThemeToggle,
+  useSystemTheme,
+  usePrefersReducedMotion,
+  withTheme,
+  ThemeMatch,
+  ThemeSwitch,
+  ThemeScript,
+  type ThemeProviderProps,
+  type ThemeMatchProps,
+  type ThemeSwitchProps,
+} from "./theme/context"
+
+export {
+  ThemeToggle,
+  ThemeSelect,
+  ThemeButtonGroup,
+  type ThemeToggleProps,
+  type ThemeSelectProps,
+  type ThemeButtonGroupProps,
+} from "./theme/ThemeToggle"
