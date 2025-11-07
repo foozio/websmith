@@ -60,8 +60,8 @@ This document lists all identified tasks for improving and maintaining the Websm
 - [x] Add lazy loading for heavy components (Dialog, Table, etc.)
 - [x] Optimize bundle size with better tree-shaking
 - [x] Add performance monitoring and metrics
-- [ ] Implement caching strategies for token generation
-- [ ] Optimize CSS variable generation for large themes
+- [x] Implement caching strategies for token generation
+- [x] Optimize CSS variable generation for large themes
 
 ## Low Priority Tasks
 

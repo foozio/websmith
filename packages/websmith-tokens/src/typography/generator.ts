@@ -1,4 +1,5 @@
 // Typography scale - Advanced modular scale with mathematical calculations
+import { typographyCache } from '../cache'
 
 export interface TypographyScaleOptions {
   baseSize?: number        // Base font size in pixels (default: 16)
@@ -77,6 +78,12 @@ function calculateLetterSpacing(fontSize: number, weight: number = 400): string 
  * Generate comprehensive typography scale with mathematical calculations
  */
 export function generateTypographyScale(options: TypographyScaleOptions = {}): TypographyScale {
+  // Check cache first
+  const cached = typographyCache.get(options)
+  if (cached !== undefined) {
+    return cached
+  }
+
   const {
     baseSize = 16,
     ratio = MUSICAL_RATIOS['major-third'],
@@ -140,12 +147,16 @@ export function generateTypographyScale(options: TypographyScaleOptions = {}): T
     black: 900
   }
 
-  return {
+  const result = {
     fontSizes,
     lineHeights,
     letterSpacing,
     fontWeights
   }
+
+  // Store in cache
+  typographyCache.set(options, result)
+  return result
 }
 
 /**

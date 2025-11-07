@@ -2,6 +2,8 @@
  * Performance monitoring for token generation
  */
 
+import { getAllCacheStats, type CacheStats } from './cache'
+
 export interface TokenGenerationMetrics {
   operation: string
   duration: number
@@ -111,6 +113,7 @@ class TokenPerformanceMonitor {
 
   logSummary(): void {
     const summary = this.getSummary()
+    const cacheStats = getAllCacheStats()
 
     console.group('[Websmith Tokens Performance Summary]')
     console.table(
@@ -125,6 +128,20 @@ class TokenPerformanceMonitor {
         'Cache Hits': stats.cacheHits,
       }))
     )
+
+    console.group('[Cache Statistics]')
+    console.table(
+      Object.entries(cacheStats).map(([type, stats]) => ({
+        Type: type,
+        'Hits': stats.hits,
+        'Misses': stats.misses,
+        'Hit Rate': `${(stats.hitRate * 100).toFixed(1)}%`,
+        'Size': stats.size,
+        'Max Size': stats.maxSize,
+        'Evictions': stats.evictions,
+      }))
+    )
+    console.groupEnd()
     console.groupEnd()
   }
 
@@ -137,6 +154,7 @@ class TokenPerformanceMonitor {
       timestamp: Date.now(),
       metrics: this.metrics,
       summary: this.getSummary(),
+      cacheStats: getAllCacheStats(),
     }, null, 2)
   }
 }

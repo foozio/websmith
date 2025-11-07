@@ -1,4 +1,6 @@
 // Color palette generator with mathematical calculations
+import { colorCache } from '../cache'
+
 export interface HSLColor {
   h: number
   s: number
@@ -41,6 +43,13 @@ export function generatePalette(
   baseHSL: HSLColor, 
   shades: number[] = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]
 ): Record<string, string> {
+  // Check cache first
+  const cacheKey = { baseHSL, shades }
+  const cached = colorCache.get(cacheKey)
+  if (cached !== undefined) {
+    return cached
+  }
+
   const palette: Record<string, string> = {}
 
   shades.forEach(shade => {
@@ -48,6 +57,8 @@ export function generatePalette(
     palette[shade] = `hsl(${baseHSL.h}, ${baseHSL.s}%, ${lightness}%)`
   })
 
+  // Store in cache
+  colorCache.set(cacheKey, palette)
   return palette
 }
 
@@ -236,6 +247,13 @@ export function generateLCHPalette(
   baseLCH: LCHColor,
   shades: number[] = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]
 ): Record<string, string> {
+  // Check cache first
+  const cacheKey = { baseLCH, shades, type: 'lch' }
+  const cached = colorCache.get(cacheKey)
+  if (cached !== undefined) {
+    return cached
+  }
+
   const palette: Record<string, string> = {}
 
   shades.forEach(shade => {
@@ -245,6 +263,8 @@ export function generateLCHPalette(
     palette[shade] = `hsl(${Math.round(hsl.h)}, ${Math.round(hsl.s)}%, ${Math.round(hsl.l)}%)`
   })
 
+  // Store in cache
+  colorCache.set(cacheKey, palette)
   return palette
 }
 
@@ -255,6 +275,13 @@ export function generateOKLCHPalette(
   baseOKLCH: OKLCHColor,
   shades: number[] = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950]
 ): Record<string, string> {
+  // Check cache first
+  const cacheKey = { baseOKLCH, shades, type: 'oklch' }
+  const cached = colorCache.get(cacheKey)
+  if (cached !== undefined) {
+    return cached
+  }
+
   const palette: Record<string, string> = {}
 
   shades.forEach(shade => {
@@ -279,6 +306,8 @@ export function generateOKLCHPalette(
     palette[shade] = `hsl(${Math.round(hsl.h)}, ${Math.round(hsl.s)}%, ${Math.round(hsl.l)}%)`
   })
 
+  // Store in cache
+  colorCache.set(cacheKey, palette)
   return palette
 }
 
