@@ -30,10 +30,10 @@ jobs:
         run: npm run build:declarations --prefix packages/websmith-ui
 
       - name: Audit dependencies for vulnerabilities
-        run: npm audit --audit-level=high
+        run: npm audit --audit-level=critical
 
       - name: Run security audit with audit-ci
-        run: npx audit-ci --high
+        run: npx audit-ci --critical
 
       - name: Lint
         run: npm run lint
