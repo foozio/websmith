@@ -61,7 +61,7 @@ const root = ReactDOM.createRoot(container)
 root.render(<App />)
 
 // Listen for messages from Figma backend
-window.onmessage = (event) => {
+window.onmessage = (event: MessageEvent) => {
   const message = event.data.pluginMessage
 
   if (message && message.type === 'sync-complete') {
