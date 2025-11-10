@@ -112,6 +112,9 @@ export function WebsmithThemeProvider({
   enableCSSVariables = true,
   cssVariablePrefix = 'ws'
 }: WebsmithThemeProviderProps) {
+  const [themeMode, setThemeMode] = useState<'light' | 'dark'>(() =>
+    typeof initialTheme === 'string' ? initialTheme : 'light'
+  )
   const [theme, setThemeState] = useState<WebsmithStyledTheme>(() =>
     normalizeTheme(initialTheme)
   )
@@ -120,14 +123,20 @@ export function WebsmithThemeProvider({
     const normalizedTheme = normalizeTheme(newTheme)
     setThemeState(normalizedTheme)
 
+    // Update theme mode if a string was passed
+    if (typeof newTheme === 'string') {
+      setThemeMode(newTheme)
+    }
+
     if (enableCSSVariables) {
       injectCSSVariables(normalizedTheme, cssVariablePrefix)
     }
   }
 
   const toggleTheme = () => {
-    const currentTheme = theme === themes.light ? 'dark' : 'light'
-    setTheme(currentTheme)
+    const newThemeMode = themeMode === 'light' ? 'dark' : 'light'
+    setThemeMode(newThemeMode)
+    setTheme(newThemeMode)
   }
 
   const contextValue: WebsmithThemeContextValue = {
