@@ -1,5 +1,5 @@
 {
-  "name": "websmith-kit",
+  "name": "@websmith/websmith-kit",
   "type": "module",
   "private": true,
   "packageManager": "npm@10.2.3",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://www.github.com/foozio/websmith"
+    "url": "git+https://github.com/foozio/websmith.git"
   },
   "bugs": {
     "url": "https://www.github.com/foozio/websmith/issues"
@@ -72,5 +72,9 @@
   },
   "dependencies": {
     "tsup": "^8.5.0"
+  },
+  "main": "eslint.config.js",
+  "directories": {
+    "doc": "docs"
   }
 }
