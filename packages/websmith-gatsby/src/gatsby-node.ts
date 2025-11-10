@@ -1,4 +1,4 @@
-import { generateTokens } from '@websmith/tokens'
+import { generateOptimizedCSS, colors, spacing, typography } from '@websmith/tokens'
 import * as fs from 'fs'
 import * as path from 'path'
 
@@ -19,11 +19,6 @@ export async function onPreBootstrap(
   const {
     tokensPath = './tokens.config.js',
     outputPath = './src/styles/websmith.css',
-    theme = 'light',
-    enableDarkMode = true,
-    prefix = 'ws',
-    generateTypes = false,
-    customCSS = ''
   } = pluginOptions
 
   // Validate configuration
@@ -33,15 +28,6 @@ export async function onPreBootstrap(
   if (!fs.existsSync(tokensConfigPath)) {
     console.warn(`Websmith tokens config not found at ${tokensConfigPath}`)
     return
-  }
-
-  // Generate CSS output path
-  const cssOutputPath = path.resolve(program.directory, outputPath)
-  const cssOutputDir = path.dirname(cssOutputPath)
-
-  // Ensure output directory exists
-  if (!fs.existsSync(cssOutputDir)) {
-    fs.mkdirSync(cssOutputDir, { recursive: true })
   }
 
   console.log('Websmith Gatsby plugin initialized')
@@ -54,49 +40,40 @@ export async function onPreBuild(
   const {
     tokensPath = './tokens.config.js',
     outputPath = './src/styles/websmith.css',
-    theme = 'light',
-    enableDarkMode = true,
     prefix = 'ws',
-    generateTypes = false,
     customCSS = ''
   } = pluginOptions
 
   const program = store.getState().program
-  const tokensConfigPath = path.resolve(program.directory, tokensPath)
   const cssOutputPath = path.resolve(program.directory, outputPath)
 
   try {
-    // Load tokens configuration
-    const tokensConfig = require(tokensConfigPath)
+    // Use default token exports to generate CSS
+    const tokens = {
+      colors,
+      spacing,
+      typography
+    }
 
     // Generate CSS variables
-    const cssVariables = generateTokens(tokensConfig, {
-      theme,
-      enableDarkMode,
+    const result = generateOptimizedCSS(tokens, {
       prefix,
-      format: 'css'
+      includeTheme: true,
+      minify: false
     })
 
     // Combine with custom CSS
-    const fullCSS = `${cssVariables}\n\n${customCSS}`.trim()
+    const fullCSS = `${result.css}\n\n${customCSS}`.trim()
+
+    // Ensure output directory exists
+    const cssOutputDir = path.dirname(cssOutputPath)
+    if (!fs.existsSync(cssOutputDir)) {
+      fs.mkdirSync(cssOutputDir, { recursive: true })
+    }
 
     // Write CSS file
     fs.writeFileSync(cssOutputPath, fullCSS, 'utf8')
-    console.log(`Websmith CSS generated at ${cssOutputPath}`)
-
-    // Generate TypeScript types if requested
-    if (generateTypes) {
-      const typesOutputPath = cssOutputPath.replace('.css', '.d.ts')
-      const types = generateTokens(tokensConfig, {
-        theme,
-        enableDarkMode,
-        prefix,
-        format: 'typescript'
-      })
-
-      fs.writeFileSync(typesOutputPath, types, 'utf8')
-      console.log(`Websmith TypeScript types generated at ${typesOutputPath}`)
-    }
+    console.log(`Websmith CSS generated at ${cssOutputPath} (${result.stats.variableCount} variables)`)
 
   } catch (error) {
     console.error('Failed to generate Websmith tokens:', error)
