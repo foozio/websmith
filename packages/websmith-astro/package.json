@@ -32,8 +32,8 @@
     "websmith"
   ],
   "dependencies": {
-    "@websmith/tokens": "workspace:*",
-    "@websmith/vite": "workspace:*"
+    "@websmith/tokens": "^2.0.0",
+    "@websmith/vite": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

@@ -39,8 +39,8 @@
     "tailwindcss"
   ],
   "dependencies": {
-    "@websmith/tokens": "workspace:*",
-    "@websmith/theme": "workspace:*"
+    "@websmith/tokens": "^2.0.0",
+    "@websmith/theme": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

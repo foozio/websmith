@@ -12,7 +12,7 @@
     "websmith"
   ],
   "dependencies": {
-    "@websmith/tokens": "workspace:*"
+    "@websmith/tokens": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

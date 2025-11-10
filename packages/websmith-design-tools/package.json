@@ -47,7 +47,7 @@
     "websmith"
   ],
   "dependencies": {
-    "@websmith/tokens": "workspace:*",
+    "@websmith/tokens": "^2.0.0",
     "commander": "^11.0.0",
     "fs-extra": "^11.0.0",
     "chalk": "^5.0.0"
