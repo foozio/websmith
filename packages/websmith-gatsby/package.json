@@ -1,0 +1,37 @@
+{
+  "name": "@websmith/gatsby",
+  "version": "1.0.0",
+  "description": "Gatsby plugin for Websmith design token integration",
+  "main": "dist/gatsby-node.js",
+  "types": "dist/gatsby-node.d.ts",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "design-tokens",
+    "css",
+    "websmith"
+  ],
+  "dependencies": {
+    "@websmith/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "gatsby": "^5.0.0",
+    "react": "^18.0.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "gatsby": "^4.0.0 || ^5.0.0",
+    "react": "^18.0.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit"
+  },
+  "files": [
+    "dist"
+  ]
+}

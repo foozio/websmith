@@ -1,0 +1,53 @@
+{
+  "name": "@websmith/styled-components",
+  "version": "1.0.0",
+  "description": "Styled Components integration for Websmith design tokens",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./theme": {
+      "import": "./dist/theme.js",
+      "types": "./dist/theme.d.ts"
+    },
+    "./utils": {
+      "import": "./dist/utils.js",
+      "types": "./dist/utils.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "styled-components",
+    "css-in-js",
+    "design-tokens",
+    "websmith",
+    "theme"
+  ],
+  "dependencies": {
+    "@websmith/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/styled-components": "^5.1.0",
+    "react": "^18.0.0",
+    "styled-components": "^6.0.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "styled-components": "^5.0.0 || ^6.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "@websmith/design-tools",
+  "version": "1.0.0",
+  "description": "Design tools integration for Websmith design tokens with Sketch, Adobe XD, and Figma support",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "websmith-design": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./sketch": {
+      "import": "./dist/sketch.js",
+      "types": "./dist/sketch.d.ts"
+    },
+    "./adobe-xd": {
+      "import": "./dist/adobe-xd.js",
+      "types": "./dist/adobe-xd.d.ts"
+    },
+    "./figma": {
+      "import": "./dist/figma.js",
+      "types": "./dist/figma.d.ts"
+    },
+    "./cli": {
+      "import": "./dist/cli.js",
+      "types": "./dist/cli.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "design-tokens",
+    "sketch",
+    "adobe-xd",
+    "figma",
+    "design-tools",
+    "websmith"
+  ],
+  "dependencies": {
+    "@websmith/tokens": "workspace:*",
+    "commander": "^11.0.0",
+    "fs-extra": "^11.0.0",
+    "chalk": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/fs-extra": "^11.0.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.0.0"
+  }
+}
