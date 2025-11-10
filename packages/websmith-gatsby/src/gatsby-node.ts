@@ -1,4 +1,4 @@
-import { generateOptimizedCSS, colors, spacing, typography } from '@websmith/tokens'
+import { exportToCSSVariables } from '@websmith/tokens'
 import * as fs from 'fs'
 import * as path from 'path'
 
@@ -48,22 +48,11 @@ export async function onPreBuild(
   const cssOutputPath = path.resolve(program.directory, outputPath)
 
   try {
-    // Use default token exports to generate CSS
-    const tokens = {
-      colors,
-      spacing,
-      typography
-    }
-
-    // Generate CSS variables
-    const result = generateOptimizedCSS(tokens, {
-      prefix,
-      includeTheme: true,
-      minify: false
-    })
+    // Generate CSS variables using default tokens
+    const cssVariables = exportToCSSVariables()
 
     // Combine with custom CSS
-    const fullCSS = `${result.css}\n\n${customCSS}`.trim()
+    const fullCSS = `${cssVariables}\n\n${customCSS}`.trim()
 
     // Ensure output directory exists
     const cssOutputDir = path.dirname(cssOutputPath)
@@ -73,7 +62,7 @@ export async function onPreBuild(
 
     // Write CSS file
     fs.writeFileSync(cssOutputPath, fullCSS, 'utf8')
-    console.log(`Websmith CSS generated at ${cssOutputPath} (${result.stats.variableCount} variables)`)
+    console.log(`Websmith CSS generated at ${cssOutputPath}`)
 
   } catch (error) {
     console.error('Failed to generate Websmith tokens:', error)
