@@ -1,10 +1,17 @@
 # @websmith/tokens
 
+## 2.0.0
+
+### Major Changes
+
+- cea4995: Release v1.2.0 with ecosystem integrations
+
 ## 1.1.0
 
 ### Minor Changes
 
 - 1994a87: Optimize CSS variable generation for large themes
+
   - Implement efficient string building using array-based concatenation
   - Add automatic deduplication to remove duplicate variable values
   - Add batching support for processing variables in configurable chunks
@@ -17,6 +24,7 @@
   - Add comprehensive test coverage (29 passing tests)
 
   Performance improvements:
+
   - 80-85% faster for large themes (1000+ variables)
   - 60-70% reduction in memory allocations
   - 10-30% smaller output with deduplication
@@ -25,6 +33,7 @@
   Backward compatible - existing `exportToCSSVariables()` function remains unchanged.
 
 - 1994a87: Implement comprehensive caching strategies for token generation
+
   - Add LRU cache implementation with configurable size and TTL
   - Integrate caching into color, typography, and spacing generators
   - Add cache statistics tracking (hits, misses, evictions, hit rate)

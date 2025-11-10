@@ -1,10 +1,12 @@
 {
   "name": "@websmith/eslint-plugin",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "ESLint rules for Websmith Kit patterns and best practices",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",

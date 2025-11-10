@@ -1,6 +1,6 @@
 {
   "name": "@websmith/a11y",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Accessibility auditing and WCAG compliance tools",
   "author": "Nuzli Hernawan <nuzlilatief@gmail.com>",
   "license": "MIT",

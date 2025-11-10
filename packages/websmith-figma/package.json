@@ -1,6 +1,6 @@
 {
   "name": "@websmith/figma-plugin",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Figma plugin for syncing design tokens with Websmith Kit",
   "author": "Nuzli Hernawan <nuzlilatief@gmail.com>",
   "license": "MIT",

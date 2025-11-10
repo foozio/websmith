@@ -2,7 +2,7 @@
   "name": "websmith-kit",
   "displayName": "Websmith Kit",
   "description": "Complete development toolkit for Websmith design system - components, tokens, themes, and more",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "publisher": "websmith",
   "author": "Nuzli Hernawan <nuzlilatief@gmail.com>",
   "license": "MIT",
@@ -164,7 +164,14 @@
         },
         "websmith.exportFormat": {
           "type": "string",
-          "enum": ["css", "scss", "less", "js", "ts", "json"],
+          "enum": [
+            "css",
+            "scss",
+            "less",
+            "js",
+            "ts",
+            "json"
+          ],
           "default": "css",
           "description": "Default format for design token exports"
         }
@@ -258,7 +265,7 @@
   },
   "dependencies": {
     "@websmith/tokens": "file:../websmith-tokens",
-    "@websmith/ui": "file:../websmith-ui", 
+    "@websmith/ui": "file:../websmith-ui",
     "@websmith/theme": "file:../websmith-theme"
   }
 }

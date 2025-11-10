@@ -1,6 +1,6 @@
 {
   "name": "@websmith/styled-components",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Styled Components integration for Websmith design tokens",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@websmith/nextjs",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Next.js integration for Websmith design tokens",
   "main": "dist/index.mjs",
   "types": "dist/index.d.mts",

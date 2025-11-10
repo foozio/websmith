@@ -1,6 +1,6 @@
 {
   "name": "@websmith/design-tools",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Design tools integration for Websmith design tokens with Sketch, Adobe XD, and Figma support",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
