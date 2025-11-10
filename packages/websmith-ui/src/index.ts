@@ -9,9 +9,9 @@ export * as OverlayComponents from "./components/overlay"
 export * as DataComponents from "./components/data"
 
 // Lazy-loaded components for performance
-// Note: These exports intentionally override regular component exports
-// to provide opt-in lazy loading for heavy components (Dialog, Table, Dropdown, Toast)
-export * from "./components/lazy"
+// Import these individually when you need lazy loading:
+// import { Dialog, Table, DropdownMenu, Toast } from '@websmith/ui/lazy'
+// export * from "./components/lazy"
 
 // Performance monitoring utilities
 export { 
