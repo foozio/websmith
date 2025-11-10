@@ -162,6 +162,7 @@ export function flex(
 ): any {
   const justifyContent = {
     start: 'flex-start',
+    center: 'center',
     end: 'flex-end',
     between: 'space-between',
     around: 'space-around',
