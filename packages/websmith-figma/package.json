@@ -1,0 +1,25 @@
+{
+  "name": "@websmith/figma-plugin",
+  "version": "1.0.0",
+  "description": "Figma plugin for syncing design tokens with Websmith Kit",
+  "author": "Nuzli Hernawan <nuzlilatief@gmail.com>",
+  "license": "MIT",
+  "main": "dist/code.js",
+  "scripts": {
+    "build": "npm run build:plugin && npm run build:ui",
+    "build:plugin": "esbuild src/code.ts --bundle --outfile=dist/code.js --target=es2017",
+    "build:ui": "esbuild src/ui.tsx --bundle --outfile=dist/ui.js --target=es2017 && cp src/ui.html dist/ui.html",
+    "watch": "npm run build:plugin -- --watch & npm run build:ui -- --watch",
+    "dev": "npm run watch"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "esbuild": "^0.19.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

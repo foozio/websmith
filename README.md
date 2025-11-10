@@ -37,49 +37,67 @@ function App() {
 
 ## Documentation
 
-Visit our [documentation site](https://websmith.vercel.app) for complete guides, API references, and examples.
+### 📚 Main Documentation
+
+- **[Getting Started](./docs/README.md)** - Documentation overview
+- **[Development Guide](./docs/DEVELOPMENT.md)** - Complete development workflow
+- **[Performance Guide](./docs/PERFORMANCE.md)** - Optimization techniques
+- **[Theming Guide](./docs/THEMING.md)** - Dark mode and theme system
+- **[Contributing](./CONTRIBUTING.md)** - How to contribute
+
+### 📦 Package Documentation
+
+- [Tokens](./packages/websmith-tokens/) - Design token system
+- [UI Components](./packages/websmith-ui/) - React component library
+- [Governance](./packages/websmith-governance/) - Design system governance
+- [Figma Plugin](./packages/websmith-figma/) - Token synchronization
+
+### 🌐 Online
+
+Visit our [documentation site](https://websmith.vercel.app) for interactive guides and examples.
+
+## Quick Start
+
+### Installation
+
+```bash
+npm install @websmith/ui @websmith/tokens @websmith/theme
+```
+
+### Usage
+
+```tsx
+import { Button, Card, ThemeProvider } from '@websmith/ui'
+
+function App() {
+  return (
+    <ThemeProvider config={{ defaultMode: 'system' }}>
+      <Card className="p-6">
+        <Button>Hello World</Button>
+      </Card>
+    </ThemeProvider>
+  )
+}
+```
 
 ## Development
-
-### Prerequisites
-
-- Node.js 18+
-- npm or yarn
 
 ### Setup
 
 ```bash
-# Clone the repository
 git clone https://github.com/foozio/websmith.git
 cd websmith
-
-# Install dependencies
 npm install
-
-# Start development
-npm run dev
-```
-
-### Building
-
-```bash
-# Build all packages
-npm run build
-
-# Build specific package
-cd packages/websmith-ui
 npm run build
 ```
 
-### Testing
+### Development Mode
 
 ```bash
-# Run tests
-npm run test
-
-# Run linting
-npm run lint
+npm run dev  # Start all packages in watch mode
 ```
+
+For complete development guide, see [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md)
 
 ## Project Structure
 
